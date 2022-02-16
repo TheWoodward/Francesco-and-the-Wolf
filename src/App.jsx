@@ -4,7 +4,7 @@ import { getGrid } from "./helpers";
 
 const App = () => (
   <div className="App">
-    <Grid data={getGrid(data.puzzles[0].layout)}></Grid>
+    <Grid data={getGrid(data.puzzles[0])}></Grid>
   </div>
 );
 

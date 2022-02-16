@@ -1,6 +1,5 @@
-const Square = ({ row, column, borders }) => {
+const Square = ({ row, column, borders, wolf, francesco }) => {
   const getDirectionString = (border) => {
-    console.log(border);
     switch (border) {
       case "L":
         return "Left";
@@ -15,9 +14,21 @@ const Square = ({ row, column, borders }) => {
     }
   };
 
+  const getColor = () => {
+    if (wolf) {
+      return "red";
+    }
+    if (francesco) {
+      return "green";
+    }
+    return "white";
+  };
+
   const createCssBorders = () => {
     if (borders) {
-      const styles = {};
+      const styles = {
+        backgroundColor: getColor(),
+      };
       borders.split("").forEach((border) => {
         styles["border" + getDirectionString(border)] = "1px solid black";
       });
