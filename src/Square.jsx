@@ -3,13 +3,13 @@ const Square = ({ row, column, borders }) => {
     console.log(border);
     switch (border) {
       case "L":
-        return "left";
+        return "Left";
       case "R":
-        return "right";
+        return "Right";
       case "T":
-        return "top";
+        return "Top";
       case "B":
-        return "bottom";
+        return "Bottom";
       default:
         break;
     }
@@ -19,7 +19,7 @@ const Square = ({ row, column, borders }) => {
     if (borders) {
       const styles = {};
       borders.split("").forEach((border) => {
-        styles["border-" + getDirectionString(border)] = "1px solid black";
+        styles["border" + getDirectionString(border)] = "1px solid black";
       });
       return styles;
     }

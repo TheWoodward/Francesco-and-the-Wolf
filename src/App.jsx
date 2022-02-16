@@ -1,9 +1,10 @@
-import Square from "./Square";
+import Grid from "./Grid";
+import data from "./PuzzleSetups.json";
+import { getGrid } from "./helpers";
 
 const App = () => (
   <div className="App">
-    <h1>Hello World</h1>
-    <Square row={1} column={2} borders="LR"></Square>
+    <Grid data={getGrid(data.puzzles[0].layout)}></Grid>
   </div>
 );
 
