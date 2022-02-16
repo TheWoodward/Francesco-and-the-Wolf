@@ -2,12 +2,12 @@
 export const getInitialGrid = ({layout, wolf, Francesco}) => {
     const grid = [];
     layout.forEach(square => {
-        if (wolf.row == square.row && wolf.column == square.column){
+        if (wolf.row === square.row && wolf.column === square.column){
             square.wolf = true;
         } else {
             square.wolf = false;
         }
-        if (Francesco.row == square.row && Francesco.column == square.column){
+        if (Francesco.row === square.row && Francesco.column === square.column){
             square.francesco = true;
         } else {
             square.francesco = false;
@@ -52,7 +52,7 @@ export const getGridAfterMove = (grid,character,direction) => {
         default:
           break;
       }
-      
+
     grid[row][column][character] = true;
     return grid;
 }

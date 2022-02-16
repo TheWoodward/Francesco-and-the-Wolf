@@ -20,7 +20,9 @@ const App = () => {
     <div className="App">
       <Grid data={grid}></Grid>
       {["up", "down", "left", "right"].map((direction) => (
-        <button onClick={() => handleMove(direction)}>{direction}</button>
+        <button onClick={() => handleMove(direction)} key={direction}>
+          {direction}
+        </button>
       ))}
     </div>
   );
