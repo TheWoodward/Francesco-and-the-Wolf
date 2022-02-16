@@ -25,6 +25,7 @@ const Square = ({ row, column, borders, wolf, francesco }) => {
   };
 
   const createCssBorders = () => {
+    //TODO: investigate 43 bug
     if (borders) {
       const styles = {
         backgroundColor: getColor(),
