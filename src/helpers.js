@@ -1,3 +1,4 @@
+//TODO: test file
 export const getInitialGrid = ({layout, wolf, Francesco}) => {
     const grid = [];
     layout.forEach(square => {
@@ -21,6 +22,8 @@ export const getInitialGrid = ({layout, wolf, Francesco}) => {
 }
 
 export const getGridAfterMove = (grid,character,direction) => {
+    //TODO: add boundary limits
+    //TODO: add wall limits
     let row = 0;
     let column = 0;
     for (let i = 0; i < grid.length; i++){
@@ -49,6 +52,7 @@ export const getGridAfterMove = (grid,character,direction) => {
         default:
           break;
       }
+      
     grid[row][column][character] = true;
     return grid;
 }

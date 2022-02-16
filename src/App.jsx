@@ -12,6 +12,8 @@ const App = () => {
 
   const handleMove = (direction) => {
     setGrid(getGridAfterMove([...grid], "francesco", direction));
+    //TODO: wolf's move
+    //TODO: check win/loss condition
   };
 
   return (
