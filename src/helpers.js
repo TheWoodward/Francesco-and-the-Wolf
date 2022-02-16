@@ -1,4 +1,4 @@
-export const getGrid = ({layout, wolf, Francesco}) => {
+export const getInitialGrid = ({layout, wolf, Francesco}) => {
     const grid = [];
     layout.forEach(square => {
         if (wolf.row == square.row && wolf.column == square.column){
@@ -17,5 +17,38 @@ export const getGrid = ({layout, wolf, Francesco}) => {
             grid.push([square])
         }
     });
+    return grid;
+}
+
+export const getGridAfterMove = (grid,character,direction) => {
+    let row = 0;
+    let column = 0;
+    for (let i = 0; i < grid.length; i++){
+        for (let j = 0; j < grid[i].length; j++){
+            if (grid[i][j][character]){
+                row = i;
+                column = j;
+                grid[i][j][character] = false;
+            }
+        }
+    }
+
+    switch (direction) {
+        case "up":
+          row-=1;
+          break;
+        case "down":
+          row+=1;
+          break;
+        case "left":
+          column-=1;
+          break;
+        case "right":
+            column+=1;
+            break;
+        default:
+          break;
+      }
+    grid[row][column][character] = true;
     return grid;
 }

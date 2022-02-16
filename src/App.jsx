@@ -1,11 +1,27 @@
+import React, { useState, useEffect } from "react";
 import Grid from "./Grid";
 import data from "./PuzzleSetups.json";
-import { getGrid } from "./helpers";
+import { getGridAfterMove, getInitialGrid } from "./helpers";
 
-const App = () => (
-  <div className="App">
-    <Grid data={getGrid(data.puzzles[0])}></Grid>
-  </div>
-);
+const App = () => {
+  const [grid, setGrid] = useState([]);
+
+  useEffect(() => {
+    setGrid(getInitialGrid(data.puzzles[0]));
+  }, []);
+
+  const handleMove = (direction) => {
+    setGrid(getGridAfterMove([...grid], "francesco", direction));
+  };
+
+  return (
+    <div className="App">
+      <Grid data={grid}></Grid>
+      {["up", "down", "left", "right"].map((direction) => (
+        <button onClick={() => handleMove(direction)}>{direction}</button>
+      ))}
+    </div>
+  );
+};
 
 export default App;
