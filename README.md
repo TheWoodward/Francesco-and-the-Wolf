@@ -11,6 +11,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 `//TODO:` comments throughout the code highlight next steps
 
+![image](https://user-images.githubusercontent.com/20611406/154352557-cae0d024-6320-4f3c-9508-2ee686f623a9.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
